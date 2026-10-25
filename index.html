@@ -254,16 +254,20 @@ body.idle{cursor:none}
 @keyframes bubble{0%{transform:translate(0,0)}50%{transform:translate(18px,-55vh)}100%{transform:translate(-10px,-115vh)}}
 
 /* --- التحضير --- */
-.prep{display:grid;grid-template-columns:1fr 1.25fr;gap:44px;flex:1;min-height:0;align-items:stretch}
-.prep .card{display:flex;flex-direction:column}
-.mini-flips{display:grid;grid-template-columns:1fr 1fr;gap:22px;flex:1}
-.mini-flips .flip{min-height:170px}
+.prep{display:flex;flex-direction:column;gap:22px;flex:1;min-height:0}
+.prep-hint{font-size:26px;color:var(--muted);font-weight:700}
+.mini-flips{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;flex:1;min-height:0}
+.mini-flips .flip{min-height:340px}
 .mini-flips .front{background:#fff;border:3px solid var(--p200);box-shadow:0 12px 26px -18px rgba(76,29,149,.6)}
-.mini-flips .front .q{font-size:28px;font-weight:800;line-height:1.45;color:var(--p800)}
-.mini-flips .front .n{font-size:22px;font-weight:900;color:#fff;background:#1d7a45;border-radius:12px;padding:2px 14px}
-.mini-flips .back{background:linear-gradient(135deg,#1d7a45,#22a06b);color:#fff}
-.mini-flips .back .a{font-size:36px;font-weight:900;direction:rtl}
-.mini-flips .back small{font-size:20px;opacity:.85}
+.mini-flips .front .ic{font-size:64px}
+.mini-flips .front .q{font-size:34px;font-weight:800;line-height:1.5;color:var(--p800)}
+.mini-flips .front .n{font-size:24px;font-weight:900;color:#fff;background:var(--p700);border-radius:12px;padding:2px 16px}
+.mini-flips .back{background:linear-gradient(135deg,#7c3aed,#4c1d95);color:#fff}
+.mini-flips .back .a{font-size:27px;font-weight:700;line-height:1.55;text-align:right;direction:rtl}
+.mini-flips .back ul,.mini-flips .back ol{margin:0;padding-right:28px;display:flex;flex-direction:column;gap:10px}
+.mini-flips .back ul{list-style:none;padding-right:0}
+.mini-flips .back ol{list-style:arabic-indic}
+.mini-flips .back small{font-size:21px;opacity:.9}
 .xl-head{display:flex;align-items:center;gap:14px}
 .xl-logo{width:56px;height:56px;border-radius:14px;background:#1d7a45;color:#fff;font:900 34px Arial,sans-serif;display:grid;place-items:center}
 
@@ -280,6 +284,36 @@ body.idle{cursor:none}
 .goals-side{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
 .goals-side .w-star{width:300px;height:300px}
 .goals-side p{font-size:32px;font-weight:800;color:var(--p700);line-height:1.5}
+
+/* --- أسئلة نافس --- */
+.nafes{display:grid;grid-template-columns:.9fr 1.6fr;gap:40px;flex:1;min-height:0;align-items:center}
+.nafes.no-img{grid-template-columns:1fr}
+.nf-fig{display:grid;place-items:center;padding:24px;background:#fff}
+.nf-fig img{width:100%;max-height:520px;object-fit:contain}
+.nafes .mcq.compact-q .mcq-q{font-size:40px}
+.nafes .mcq-opts.compact .opt{font-size:34px;padding:16px 22px}
+.cells{display:inline-grid;grid-template-columns:repeat(2,auto);gap:4px}
+.cells i{font-style:normal;display:grid;place-items:center;width:84px;height:84px;border-radius:50%;font-size:28px;font-weight:900;color:var(--p800);
+  background:radial-gradient(circle at 40% 35%,#fff,#c9c3f5 70%);border:3px solid #9d93e6}
+.cells.c4 i{width:62px;height:62px;font-size:22px}
+
+/* --- السؤال المحوري --- */
+.pivot{display:flex;flex-direction:column;gap:26px;flex:1;min-height:0;justify-content:center}
+.pv-bridge{display:flex;align-items:center;justify-content:center;gap:30px}
+.pv-b{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.3);border-radius:24px;padding:14px 28px;font-size:30px}
+.pv-b small{font-size:24px;opacity:.85;font-weight:700}
+.pv-ic{font-size:44px}
+.pv-eq{font-size:44px;color:#ffd76a;font-weight:900}
+.pv-q{background:#fff;color:var(--p800);border-radius:34px;padding:34px 46px;text-align:center;box-shadow:0 30px 60px -24px rgba(0,0,0,.55);border-bottom:8px solid #ffb547}
+.pv-lead{font-size:34px;font-weight:700;color:var(--muted);margin-bottom:10px}
+.pv-main{font-size:46px;font-weight:900;line-height:1.55}
+.pv-main mark{background:linear-gradient(transparent 55%,#ffd76a 55%);color:inherit;padding:0 4px}
+.pv-board{display:flex;flex-direction:column;gap:16px}
+.pv-add{display:flex;gap:12px;align-items:center}
+.pv-add input{flex:1;font:inherit;font-size:26px;font-weight:700;padding:14px 22px;border-radius:18px;border:2px solid rgba(255,255,255,.4);background:rgba(255,255,255,.95);color:var(--ink)}
+.pv-ideas{display:flex;flex-wrap:wrap;gap:14px;min-height:64px}
+.pv-idea{font-size:26px;font-weight:800;background:#ffd76a;color:#4a2a00;border-radius:999px;padding:10px 24px;cursor:pointer;animation:pop .4s}
+.pv-idea.sugg{background:rgba(255,255,255,.92);color:var(--p800)}
 
 /* --- مشهد الرسم p5 --- */
 .stage-canvas{position:relative;border-radius:36px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(0,0,0,.55);border:6px solid rgba(255,255,255,.3);background:#0b4f7a}
@@ -465,6 +499,7 @@ body.idle{cursor:none}
 
 /* --- الفنون: لوحة الرسم --- */
 .art{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:30px;flex:1;min-height:0;align-items:center}
+.art-main{display:flex;flex-direction:column;gap:18px;min-width:0;align-items:center}
 .pad-wrap{position:relative;aspect-ratio:1200/640;width:100%;max-width:1150px;justify-self:center;border-radius:30px;overflow:hidden;background:#fff;box-shadow:var(--shadow);border:5px solid #fde2f0}
 .pad-wrap canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
 .pad-grid{position:absolute;inset:0;pointer-events:none;display:none;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
@@ -482,6 +517,20 @@ body.idle{cursor:none}
 .sz.on,.st.on{border-color:var(--p600);background:var(--p100)}
 .sz i{display:block;border-radius:50%;background:var(--ink)}
 .art-task{font-size:23px;line-height:1.6;font-weight:700}
+.pad-fold{position:absolute;inset:0 50% 0 auto;width:0;border-left:4px dashed #ef5da8;pointer-events:none;display:none}
+.pad-fold.on{display:block}
+.fold-flap{position:absolute;top:0;bottom:0;right:0;width:50%;transform-origin:left center;pointer-events:none;opacity:0;
+  background:linear-gradient(90deg,rgba(239,93,168,.18),rgba(255,240,247,.9));border-radius:0 24px 24px 0}
+.fold-flap.go{animation:foldFlap 1.4s ease-in-out}
+@keyframes foldFlap{0%{opacity:.95;transform:perspective(1400px) rotateY(0)}45%,55%{opacity:.95;transform:perspective(1400px) rotateY(-178deg)}100%{opacity:0;transform:perspective(1400px) rotateY(0)}}
+.fold-card{width:100%;max-width:1150px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px 22px;padding:16px 24px;border:3px solid #fde2f0}
+.fold-t{font-size:26px;color:#db2777}
+.eng-tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.eng-tools span{font-size:24px;font-weight:800;background:#fff4e8;color:#9a4a0c;border:2px solid #fcd9b6;border-radius:999px;padding:6px 18px}
+.fold-steps{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0;padding:0;list-style:none;counter-reset:fs}
+.fold-steps li{counter-increment:fs;font-size:20px;font-weight:700;background:#fff0f7;border-radius:14px;padding:6px 12px}
+.fold-steps li::before{content:counter(fs, arabic-indic) ' ';color:#db2777;font-weight:900}
+.fold-link{grid-column:1/-1;font-size:21px;font-weight:800;color:var(--p700);margin:0}
 .art .btn.small{font-size:21px;padding:10px 16px}
 .tools .stamps{margin-top:10px}
 
@@ -569,9 +618,11 @@ body.idle{cursor:none}
 .closing{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:24px}
 .closing h1{font-size:110px}
 .closing .msg{font-size:44px;font-weight:700;line-height:1.6;max-width:1400px}
-.closing .hw{font-size:28px;font-weight:700;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.3);border-radius:26px;padding:18px 30px;max-width:1300px;line-height:1.6}
 .winner{font-size:36px;font-weight:900;color:var(--sun)}
 .closing-btns{display:flex;gap:20px}
+.mdr{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;background:#fff;color:var(--p800);border-radius:26px;padding:16px 28px;border-bottom:6px solid #ffb547;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.mdr b{font-size:34px;font-weight:900;color:#0e7c86}
+.mdr span{font-size:30px;font-weight:800;background:var(--p50);border-radius:16px;padding:8px 18px}
 </style>
 </head>
 <body>
@@ -653,7 +704,7 @@ const LESSON = {
     { id:'eng',  letter:'E', name:'الهندسة',   icon:'⚙️', color:'#ea7a1a',
       task:'صمّمي نموذجًا للانقسام بأربعة كروموسومات ورتّبي مراحله.', product:'🎯 نموذج مجسّم' },
     { id:'art',  letter:'A', name:'الفنون',    icon:'🎨', color:'#db2777',
-      task:'ارسمي قصة مصوّرة من ٤ مشاهد لنجم بحر يُجدّد ذراعه.', product:'🎯 قصة مصوّرة' },
+      task:'ارسمي قصة مصوّرة من ٤ مشاهد لنجم بحر يُجدّد ذراعه، ثم اصنعي لوحة بالطباعة بالطي.', product:'🎯 قصة مصوّرة + لوحة بالطي' },
     { id:'math', letter:'M', name:'الرياضيات', icon:'➗', color:'#7c3aed',
       task:'احسبي عدد البكتيريا بعد ساعتين إذا انشطرت كل ٢٠ دقيقة.', product:'🎯 حلّ + نمط عددي' },
   ],
@@ -663,15 +714,17 @@ const LESSON = {
     /* 1 */ { id:'welcome', type:'welcome', fx:'zoom' },
 
     /* 2 */ { id:'prep', type:'prep', fx:'slide',
-      chip:'🎲 قرعة الأسماء · ❓ استراتيجية الأسئلة',
-      title:'تحضير: لنتذكّر درسنا السابق في Excel',
+      chip:'🔁 مراجعة الدرس السابق · ❓ استراتيجية الأسئلة',
+      title:'لنتذكّر درسنا السابق: الانقسام المتساوي 🧬',
       review:[
-        { q:'ما اسم المربع الناتج من تقاطع الصف مع العمود؟', a:'الخلية 🔲', note:'Cell' },
-        { q:'بأي رمز تبدأ أي معادلة في Excel؟', a:'= علامة المساواة', note:'مثل: =A1+B1' },
-        { q:'ما الدالة التي تجمع مجموعة من الأرقام؟', a:'SUM', note:'=SUM(B2:B6)' },
-        { q:'ما عنوان الخلية في العمود C والصف 4؟', a:'C4', note:'العمود ثم الصف' },
+        { icon:'💡', q:'ما أهمية الانقسام المتساوي؟',
+          a:'<ul><li>🌱 <b>النمو</b>: زيادة عدد خلايا الجسم</li><li>🩹 <b>تعويض</b> الخلايا التالفة والميتة</li><li>🧬 إنتاج خليتين <b>متماثلتين</b> لهما عدد الكروموسومات نفسه</li></ul>' },
+        { icon:'🔢', q:'ما أطوار الانقسام المتساوي؟',
+          a:'<ol><li>الطور <b>التمهيدي</b></li><li>الطور <b>الاستوائي</b></li><li>الطور <b>الانفصالي</b></li><li>الطور <b>النهائي</b></li></ol>', note:'ويسبقها الطور البيني (تضاعف الكروموسومات)' },
+        { icon:'🐾🌿', q:'ما الفرق بين الانقسام المتساوي في الخلية الحيوانية والخلية النباتية؟',
+          a:'<ul><li>🐾 <b>الحيوانية</b>: ينقبض الغشاء البلازمي إلى الداخل حتى تنفصل الخليتان</li><li>🌿 <b>النباتية</b>: تتكوّن <b>صفيحة خلوية</b> في المنتصف تصبح جدارًا خلويًا جديدًا</li></ul>' },
       ],
-      note:'💡 سنستخدم Excel اليوم في مهمة مجموعة التقنية!' },
+      note:'💡 الانقسام المتساوي هو أساس التكاثر اللاجنسي… وهذا درسنا اليوم!' },
 
     /* 3 */ { id:'goals', type:'objectives', fx:'fade',
       chip:'🎯 أهداف الدرس', title:'في نهاية الدرس ستكونين قادرة على:',
@@ -679,7 +732,6 @@ const LESSON = {
         { icon:'📖', text:'أن تُعرّفي التكاثر اللاجنسي.' },
         { icon:'🔍', text:'أن تُميّزي بين أنواعه: الانقسام، الانشطار، التبرعم، التجدد.' },
         { icon:'🦠', text:'أن تذكري أمثلة لمخلوقات حية تتكاثر لاجنسيًا.' },
-        { icon:'⭐', text:'أن تُفسّري قدرة نجم البحر على التجدد.' },
         { icon:'🚀', text:'أن تُطبّقي ما تعلمتِه في مهمات STEAM مع مجموعتك.' },
       ],
       side:'اضغطي على كل هدف عند تحقيقه ✔' },
@@ -694,6 +746,13 @@ const LESSON = {
         { text:'⭐⭐ قد يصبح نجمين!', ok:true },
       ],
       link:'🤔 كيف استطاع مخلوقٌ واحد أن يُنتج فردًا جديدًا <b>دون شريك</b>؟ هذا ما سنكتشفه في درس اليوم: <b>التكاثر اللاجنسي</b>' },
+
+    /* 4ب */ { id:'pivot', type:'pivot', fx:'zoom',
+      chip:'🧭 السؤال المحوري · ختام التمهيد', title:'سؤالنا المحوري لهذا الدرس',
+      bridge:[ { icon:'🧬', t:'التكاثر', d:'استمرار المخلوقات الحية' }, { icon:'🇸🇦', t:'وطننا', d:'قوة واستمرار في مسيرة البناء' } ],
+      lead:'إذا كان التكاثر وسيلة لاستمرار المخلوقات الحية..',
+      question:'فما الوسائل التي تجعل <mark>وطننا قويًا</mark> وقادرًا على مواجهة التحديات والاستمرار في <mark>مسيرة البناء</mark>؟',
+      ideas:['📚 العلم والتعليم','🤝 الوحدة الوطنية والتعاون','🛠️ العمل والإنتاج','💡 الابتكار والبحث العلمي','💪 صحة أفراده','🌿 الحفاظ على الموارد','🛡️ الأمن والانتماء','🌟 القيم والأخلاق'] },
 
     /* 5 */ { id:'concept', type:'concept', fx:'slide',
       chip:'🔎 لاحظ واكتشف', title:'ما التكاثر اللاجنسي؟',
@@ -773,7 +832,8 @@ const LESSON = {
         { i:'↔️', t:'تستطيل الخلية وتبتعد النسختان' },
         { i:'✂️', t:'تنشطر إلى خليتين متشابهتين' },
       ],
-      steps:[ 'اصنعي نموذجًا للانقسام المتساوي من المواد المتوفرة (صلصال، أسلاك ملونة، خيوط).', 'استعملي أربعة كروموسومات في النموذج.', 'رتّبي النماذج بالتسلسل حسب مراحل الانقسام.' ],
+      tools:[ {i:'🟣', t:'صلصال'}, {i:'📄', t:'ورق'}, {i:'🥢', t:'أعواد الأذن'} ],
+      steps:[ 'اصنعي نموذجًا للانقسام المتساوي من الصلصال والورق وأعواد الأذن.', 'استعملي أربعة كروموسومات في النموذج.', 'رتّبي النماذج بالتسلسل حسب مراحل الانقسام.' ],
       analysis:[
         { q:'أيّ دور يمكن رؤية النواة فيه؟', a:'✔ في الطور البيني (قبل بدء الانقسام)' },
         { q:'ما عدد الخلايا الناتجة عن انقسام الخلية؟', a:'✔ خليتان متطابقتان' },
@@ -781,7 +841,10 @@ const LESSON = {
 
     /* 13 */ { id:'art', type:'draw', group:'art', fx:'zoom',
       chip:'ارسمي وأبدعي', title:'محطة الفنون: قصة نجم البحر 🎨',
-      task:'🖍️ ارسمي قصة مصوّرة في ٤ مشاهد:<br>① نجم سليم ② فقد ذراعًا<br>③ خلايا تنقسم ④ ذراع جديدة!' },
+      task:'🖍️ ارسمي قصة مصوّرة في ٤ مشاهد:<br>① نجم سليم ② فقد ذراعًا<br>③ خلايا تنقسم ④ ذراع جديدة!',
+      fold:{ title:'🦋 الطباعة بالطي',
+        steps:[ 'اطوي الورقة من المنتصف ثم افتحيها', 'ضعي الألوان على نصف واحد فقط', 'اطوي الورقة واضغطي عليها جيدًا', 'افتحيها… نسخة متطابقة!' ],
+        link:'🧬 مثل الانقسام المتساوي: خلية واحدة ← خليتان متطابقتان' } },
 
     /* 14 */ { id:'math', type:'math', group:'math', fx:'slide',
       chip:'تحدي الأرقام', title:'محطة الرياضيات: لغز البكتيريا 🦠',
@@ -836,7 +899,30 @@ const LESSON = {
         { i:'🔄', t:'التجدد', e:'نجم البحر، الإسفنج', c:'#ff7a59' },
       ] },
 
-    /* 22 */ { id:'assess', type:'assess', fx:'slide', chip:'📝 التقييم الفوري', title:'تذكرة الخروج ٣ - ٢ - ١',
+    /* 22 */ { id:'nafes1', type:'nafes', fx:'zoom', chip:'🏆 أسئلة نافس', title:'نافس ١',
+      img:'nafes/q1.jpg', alt:'(١) إسفنج  (٢) هيدرا',
+      question:'لديك صورتان وعلى الترتيب (١)، (٢) وضّحي نوعي التكاثر اللاجنسي لهما:',
+      options:[ {icon:'أ', text:'انشطار خلوي (٢) تجدد (١)'}, {icon:'ب', text:'تبرعم (٢) انشطار خلوي (١)'}, {icon:'ج', text:'تجدد (٢) تبرعم (١)'}, {icon:'د', text:'تبرعم (٢) تجدد (١)'} ],
+      answer:3, explain:'(١) الإسفنج يتكاثر بالتجدد ⭐ · (٢) الهيدرا تتكاثر بالتبرعم 🌱' },
+
+    /* 23 */ { id:'nafes2', type:'nafes', fx:'slide', chip:'🏆 أسئلة نافس', title:'نافس ٢',
+      img:'nafes/q2.jpg', alt:'(أ) بطاطس  (ب) فراولة',
+      question:'ما نوع التكاثر لكل نبات في الشكل؟',
+      options:[ {icon:'أ', text:'أ- جنسي بالسيقان، ب- لاجنسي بالدرنات'}, {icon:'ب', text:'أ- لاجنسي بالدرنات، ب- لاجنسي بالسيقان'}, {icon:'ج', text:'أ- لاجنسي بالسيقان، ب- جنسي بالدرنات'}, {icon:'د', text:'أ- جنسي بالدرنات، ب- جنسي بالسيقان'} ],
+      answer:1, explain:'البطاطس 🥔 تتكاثر لاجنسيًا بالدرنات · الفراولة 🍓 لاجنسيًا بالسيقان الجارية' },
+
+    /* 24 */ { id:'nafes3', type:'nafes', fx:'fade', chip:'🏆 أسئلة نافس', title:'نافس ٣',
+      img:'nafes/q3.jpg', alt:'كروموسوم وسهم يشير إلى منتصفه',
+      question:'يوضح الشكل كروموسومًا مكوّنًا من (كروماتيدين)، حيث يشير السهم إلى:',
+      options:[ {icon:'أ', text:'نيوكليوتيد'}, {icon:'ب', text:'كروماتيد'}, {icon:'ج', text:'جين'}, {icon:'د', text:'سنترومير'} ],
+      answer:3, explain:'السنترومير هو المنطقة التي يرتبط عندها الكروماتيدان 🧬' },
+
+    /* 25 */ { id:'nafes4', type:'nafes', fx:'zoom', chip:'🏆 أسئلة نافس', title:'نافس ٤',
+      question:'تحتوي الخلايا الجسدية في الأرنب على ٤٤ كروموسومًا، أي الأشكال التالية يمثل النتيجة النهائية لانقسام خلية جسدية واحدة بالانقسام المتساوي؟',
+      options:[ {icon:'أ', text:cellsHTML(4, '٤٤')}, {icon:'ب', text:cellsHTML(2, '٤٤')}, {icon:'ج', text:cellsHTML(2, '٢٢')}, {icon:'د', text:cellsHTML(4, '٢٢')} ],
+      answer:1, explain:'الانقسام المتساوي يُنتج خليتين فقط، في كل منهما عدد الكروموسومات نفسه للخلية الأصلية (٤٤) 🐰' },
+
+    /* 26 */ { id:'assess', type:'assess', fx:'slide', chip:'📝 التقييم الفوري', title:'تذكرة الخروج ٣ - ٢ - ١',
       tickets:[
         { n:'٣', t:'أشياء تعلّمتُها اليوم', s:'اكتبيها بكلماتك', c:'#8b5cf6' },
         { n:'٢', t:'مثالان لمخلوقات تتكاثر لاجنسيًا', s:'مع طريقة التكاثر', c:'#12b5a6' },
@@ -844,10 +930,10 @@ const LESSON = {
       ],
       moods:[ {e:'😍', t:'فهمتُ تمامًا'}, {e:'🙂', t:'فهمتُ أغلبه'}, {e:'🤔', t:'أحتاج مساعدة'} ] },
 
-    /* 23 */ { id:'end', type:'closing', fx:'zoom',
+    /* 27 */ { id:'end', type:'closing', fx:'zoom',
       title:'أحسنتُنّ يا عالمات المستقبل! 🌟',
       message:'مثل نجم البحر… مهما فقدتِ، تستطيعين أن تنمي من جديد وتصبحي أقوى 💜',
-      homework:'📚 تحدٍّ منزلي: ابحثي عن مخلوق آخر يستطيع تجديد جزء من جسمه (مثل ذيل السحلية) وشاركينا به في الحصة القادمة.' },
+      madrasati:{ title:'📲 واجب منصة مدرستي', items:[ '▶️ مشاهدة الفيديوهات المتعلقة بالدرس', '📝 حل الواجب في منصة مدرستي' ] } },
   ],
 };
 /* ##################### نهاية الإعدادات ##################### */
@@ -1178,6 +1264,8 @@ function head(s) {
     <span class="chip" ${g ? `style="--chip:${g.color}"` : ''}>${g ? `${g.icon} مجموعة ${g.name} · ` : ''}${s.chip || ''}</span>
     <h2>${s.title}</h2></header>`;
 }
+/* خلايا ناتجة مرسومة (لأسئلة الكروموسومات) — function لتعمل داخل LESSON قبل تعريف بقية الأدوات */
+function cellsHTML(n, k) { return `<span class="cells c${n}">${Array.from({ length: n }, () => `<i>${k}</i>`).join('')}</span>`; }
 const askBtn = () => `<button class="btn small ask-btn rv" style="--d:1" data-draw>🎲 من تجيب؟</button>`;
 
 /* --- إنشاء رسم p5 عند أول ظهور للشريحة فقط --- */
@@ -1626,23 +1714,19 @@ const TYPES = {
       </div>`,
   },
 
-  /* ---------------- 2) التحضير: قرعة + مراجعة Excel ---------------- */
+  /* ---------------- 2) التحضير: مراجعة الدرس السابق ---------------- */
   prep: {
     render: s => `${head(s)}
       <div class="prep">
-        <section class="card rv" style="--d:1"><h3>🎲 قرعة الأسماء: من تجيب؟</h3>${Draw.html()}</section>
-        <section class="card rv" style="--d:2">
-          <div class="xl-head"><span class="xl-logo">X</span><h3 style="margin:0">مراجعة سريعة: Excel</h3></div>
-          <p style="font-size:22px;color:var(--muted);font-weight:700;margin:6px 0 16px">اسحبي اسمًا ← تقرأ الطالبة السؤال وتجيب ← اقلبي البطاقة للتأكد</p>
-          <div class="mini-flips">${s.review.map((r, i) => `
-            <div class="flip" role="button"><span class="flip-in">
-              <span class="face front"><span class="n">${ar(i + 1)}</span><span class="q">${r.q}</span></span>
-              <span class="face back"><span class="a">${r.a}</span><small>${r.note || ''}</small></span>
-            </span></div>`).join('')}</div>
-          <p class="tip" style="margin-top:16px">${s.note}</p>
-        </section>
+        <p class="prep-hint rv" style="--d:1">تقرأ الطالبة السؤال وتجيب ← اقلبي البطاقة للتأكد 👆</p>
+        <div class="mini-flips">${s.review.map((r, i) => `
+          <div class="flip rv" style="--d:${2 + i}" role="button"><span class="flip-in">
+            <span class="face front"><span class="n">${ar(i + 1)}</span><span class="ic">${r.icon}</span><span class="q">${r.q}</span></span>
+            <span class="face back"><span class="a">${r.a}</span>${r.note ? `<small>${r.note}</small>` : ''}</span>
+          </span></div>`).join('')}</div>
+        <p class="tip rv" style="--d:5">${s.note}</p>
       </div>`,
-    mount(el) { Draw.bind(el); bindFlips(el); },
+    mount(el) { bindFlips(el); },
   },
 
   /* ---------------- 3) الأهداف ---------------- */
@@ -1694,6 +1778,32 @@ const TYPES = {
       $('.play', el).onclick = () => { ctl.enter(); ctl.sketch?.api?.play(); votes.forEach(v => v.classList.remove('correct')); $('.reveal-box', el).classList.remove('show'); };
       $('.again', el).onclick = () => { ctl.sketch?.api?.reset(); votes.forEach(v => v.classList.remove('correct')); $('.reveal-box', el).classList.remove('show'); };
       return { enter: ctl.enter, leave() { ctl.leave(); } };
+    },
+  },
+
+  /* ---------------- 4ب) السؤال المحوري ---------------- */
+  pivot: {
+    dark: true,
+    render: s => `${head(s)}
+      <div class="pivot">
+        <div class="pv-bridge rv" style="--d:1">${s.bridge.map(b => `<div class="pv-b"><span class="pv-ic">${b.icon}</span><b>${b.t}</b><small>${b.d}</small></div>`).join('<span class="pv-eq">⇐</span>')}</div>
+        <div class="pv-q rv" style="--d:2"><p class="pv-lead">${s.lead}</p><p class="pv-main">${s.question}</p></div>
+        <div class="pv-board rv" style="--d:3">
+          <div class="pv-add"><input type="text" placeholder="✍️ اكتبي فكرة الطالبة هنا ثم اضغطي Enter"><button class="btn sun small add">➕ أضيفي</button><button class="btn glass small sugg">💡 أفكار مقترحة</button></div>
+          <div class="pv-ideas"></div>
+        </div>
+      </div>`,
+    mount(el, s) {
+      const box = $('.pv-ideas', el), inp = $('input', el);
+      const add = (t, sugg) => {
+        if (!t) return;
+        const c = document.createElement('span'); c.className = 'pv-idea' + (sugg ? ' sugg' : ''); c.textContent = t;
+        c.title = 'اضغطي للحذف'; c.onclick = () => c.remove();
+        box.appendChild(c); Sound.pop();
+      };
+      inp.addEventListener('keydown', e => { if (e.key === 'Enter') { add(inp.value.trim()); inp.value = ''; } });
+      $('.add', el).onclick = () => { add(inp.value.trim()); inp.value = ''; inp.focus(); };
+      $('.sugg', el).onclick = () => { s.ideas.forEach((t, i) => setTimeout(() => add(t, true), i * 180)); Confetti.fromEl($('.pv-q', el), 80); };
     },
   },
 
@@ -1938,6 +2048,8 @@ const TYPES = {
         </div>
         <div class="card exp rv" style="--d:3">
           <h3>🛠️ تجربة: نموذج للانقسام المتساوي</h3>
+          <span class="tag">الأدوات</span>
+          <div class="eng-tools">${s.tools.map(t => `<span>${t.i} ${t.t}</span>`).join('')}</div>
           <span class="tag">الخطوات</span>
           <ol>${s.steps.map(t => `<li>${t}</li>`).join('')}</ol>
           <span class="tag">التحليل</span>
@@ -1969,15 +2081,24 @@ const TYPES = {
   draw: {
     render: s => `${head(s)}
       <div class="art">
+        <div class="art-main">
         <div class="pad-wrap rv" style="--d:1"><canvas width="1200" height="640"></canvas>
-          <div class="pad-grid"><div><span>١</span></div><div><span>٢</span></div><div><span>٣</span></div><div><span>٤</span></div></div></div>
+          <div class="pad-grid"><div><span>١</span></div><div><span>٢</span></div><div><span>٣</span></div><div><span>٤</span></div></div>
+          <div class="pad-fold"></div><div class="fold-flap"></div></div>
+        <div class="card fold-card rv" style="--d:3">
+          <b class="fold-t">${s.fold.title}</b>
+          <ol class="fold-steps">${s.fold.steps.map(t => `<li>${t}</li>`).join('')}</ol>
+          <button class="btn sun small press">🦋 اطوي واطبعي</button>
+          <p class="fold-link">${s.fold.link}</p>
+        </div>
+        </div>
         <div class="tools rv" style="--d:2">
           <div class="card art-task">${s.task}</div>
           <div class="card"><div class="tool-t">🎨 الألوان</div><div class="swatches">${['#2a1b4a', '#e9583a', '#ff9f43', '#ffd166', '#16a34a', '#12b5a6', '#3a86ff', '#8b5cf6', '#ef5da8', '#ffffff'].map((c, i) => `<button class="sw ${i === 1 ? 'on' : ''}" style="--c:${c}" data-c="${c}"></button>`).join('')}</div></div>
           <div class="card"><div class="tool-t">✏️ الحجم والأختام</div>
             <div class="sizes">${[6, 14, 28].map((z, i) => `<button class="sz ${i === 1 ? 'on' : ''}" data-z="${z}"><i style="width:${z / 1.4 + 4}px;height:${z / 1.4 + 4}px"></i></button>`).join('')}</div>
             <div class="stamps">${['⭐', '🦠', '🫧', '🐚', '🌿'].map(t => `<button class="st" data-s="${t}">${t}</button>`).join('')}</div></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn small grid">▦ ٤ مشاهد</button><button class="btn small clear">🧹 مسح</button><button class="btn small save">💾 حفظ</button></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn small grid">▦ ٤ مشاهد</button><button class="btn small foldline">〰️ خط الطي</button><button class="btn small clear">🧹 مسح</button><button class="btn small save">💾 حفظ</button></div>
         </div>
       </div>`,
     mount(el) {
@@ -2001,6 +2122,18 @@ const TYPES = {
       $$('.sz', el).forEach(b => b.onclick = () => { size = +b.dataset.z; $$('.sz', el).forEach(x => x.classList.toggle('on', x === b)); });
       $$('.st', el).forEach(b => b.onclick = () => { stamp = b.dataset.s; $$('.sw,.st', el).forEach(x => x.classList.toggle('on', x === b)); });
       $('.grid', el).onclick = () => $('.pad-grid', el).classList.toggle('on');
+      // 🦋 الطباعة بالطي: ينطبع الرسم مقلوبًا على النصف الآخر (الأبيض لا يغطي ما تحته بفضل multiply)
+      $('.foldline', el).onclick = () => $('.pad-fold', el).classList.toggle('on');
+      $('.press', el).onclick = () => {
+        const flap = $('.fold-flap', el);
+        $('.pad-fold', el).classList.add('on');
+        flap.classList.remove('go'); void flap.offsetWidth; flap.classList.add('go');
+        setTimeout(() => {
+          const tmp = document.createElement('canvas'); tmp.width = cv.width; tmp.height = cv.height; tmp.getContext('2d').drawImage(cv, 0, 0);
+          cx.save(); cx.globalCompositeOperation = 'multiply'; cx.setTransform(-1, 0, 0, 1, cv.width, 0); cx.drawImage(tmp, 0, 0); cx.restore();
+          Sound.success(); Confetti.fromEl($('.pad-wrap', el), 80);
+        }, 700);
+      };
       $('.clear', el).onclick = clear;
       $('.save', el).onclick = () => { const a = document.createElement('a'); a.download = 'قصة-نجم-البحر.png'; a.href = cv.toDataURL('image/png'); a.click(); };
     },
@@ -2047,6 +2180,16 @@ const TYPES = {
   /* ---------------- 15) سؤال اختيار من متعدد ---------------- */
   mcq: {
     render: s => `${head(s)}${askBtn()}<div class="mcq-wrap">${mcqHTML(s)}</div>`,
+    mount(el) { bindMCQ(el); },
+  },
+
+  /* ---------------- أسئلة نافس: صورة + اختيار من متعدد ---------------- */
+  nafes: {
+    render: s => `${head(s)}${askBtn()}
+      <div class="nafes ${s.img ? '' : 'no-img'}">
+        ${s.img ? `<figure class="nf-fig card rv" style="--d:1"><img src="${s.img}" alt="${s.alt || ''}"></figure>` : ''}
+        <div class="mcq-wrap">${mcqHTML(s, { compact: true, d: 2 })}</div>
+      </div>`,
     mount(el) { bindMCQ(el); },
   },
 
@@ -2140,7 +2283,7 @@ const TYPES = {
         <h1 class="rv" style="--d:1">${s.title}</h1>
         <p class="msg rv" style="--d:2">${s.message}</p>
         <div class="winner rv" style="--d:3"></div>
-        <div class="hw rv" style="--d:4">${s.homework}</div>
+        <div class="mdr rv" style="--d:4"><b>${s.madrasati.title}</b>${s.madrasati.items.map(t => `<span>${t}</span>`).join('')}</div>
         <div class="closing-btns rv" style="--d:5"><button class="btn sun big" data-clap>👏 صفّقي لنفسك!</button><button class="btn glass" data-go="0">↺ من البداية</button></div>
       </div>`,
     mount(el) {
